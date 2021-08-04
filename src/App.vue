@@ -7,7 +7,7 @@
   <router-view />
 </template>
 
-<style lang="scss">
+<style>
 
 
 #nav {
@@ -18,7 +18,7 @@
     color: #000000;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #000000;
     }
   }
 }

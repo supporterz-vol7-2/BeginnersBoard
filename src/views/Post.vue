@@ -12,20 +12,23 @@
 
 <script>
  export default {
-  data: function() {
-   return {
-    items: [
-     { name: 'ギター',num :50 },
-     { name: '料理' ,num :10 },
-     { name: 'ランニング' ,num :20 },
-     { name: '究極のお味噌汁' ,num :30 }
-    ]
-   }
-  }
+    data: function() {
+        return {
+            items: [
+            { name: 'ギター',num :50 },
+            { name: '料理' ,num :10 },
+            { name: 'ランニング' ,num :20 },
+            { name: '究極のお味噌汁' ,num :30 }
+        ]
+        }
+    }
+
+
  }
+
 </script>
 
-<style lang="scss">
+<style>
 
 .box9 {
     padding: 0.5em 1em;
@@ -38,14 +41,16 @@
 
 .title {
     text-align: left;
-    color: #000000;
+    color: black;
     font-size: 200%;
     text-decoration: none;
 }
 
+
+
 .title :hover {
     text-align: left;
-    color: #000000;
+    color: black;
     font-size: 120%;
     text-decoration: none;
     text-decoration: underline;
@@ -53,7 +58,7 @@
 
 .example {
     text-align: right;
-    color: #000000;
+    color: black;
     float: right;
     height:50px;
 }
