@@ -3,35 +3,37 @@
 
         <ul v-for="user of users" v-bind:key="user.name">
             <div class="box2">
-                <p class="title">{{ user.name }}</p>
+                <p class="name">{{ user.name }}</p>
                 <p class="content"> {{ user.content }}</p>
                 <p class="good"> いいね：{{ user.good }}</p>
+                <p class="space">  a</p>
+                
             </div>
-            <ll v-for="user_reply in user.reply">
-                <div class="box_reply">
-                    <p class="title">{{ user_reply.name }}</p>
-                    <p class="content"> {{ user_reply.content }}</p>
-                    <p class="good"> いいね：{{ user_reply.good }}</p>
-                </div>
-            </ll>
+            <child :replys="user.replys"></child>
+            
         </ul>
     </div>
 </template>
 
 <script>
+import Child from './reply.vue';
+
  export default {
     data: function() {
         return {
             users: [
             { name: '太郎',content :"ギターこれからするのでコツ教えて！" ,good:4,
-            reply:[
+            replys:[
                 { name: '二郎' ,content :"弦をはじくと音が出るぜ" ,good:13},
                 { name: 'ああああ' ,content :"いい感じに弾こう" ,good:8},
             ]},
             
-            { name: '近所のおばちゃん' ,content :"ギター楽しいね" ,good:9}
+            { name: '近所のおばちゃん' ,content :"ギター楽しいね" ,good:9,replys:[]}
             ]
         }
+    },
+    components: {
+        Child
     }
 
 
@@ -83,8 +85,15 @@ border-radius: 15px;
     text-align: right;
     color: black;
     float: right;
-    height:50px;
+    line-height: -400%;
 }
+.space {
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-size: 120%;
+    text-decoration: none;
+}
+
 
 
 </style>
