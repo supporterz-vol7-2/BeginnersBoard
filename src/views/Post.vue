@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <p class="board-title"> 掲示板一覧 </p>
         <ul v-for="item of items" v-bind:key="item.name">
             <div class="box9">
                 <p class="title"><router-link to= ./board>{{ item.name }}</router-link></p>
