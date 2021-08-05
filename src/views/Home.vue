@@ -1,9 +1,10 @@
 <template>
   <div class="home">
-    <button @click="login">push me</button>
-    <button @click="printUsers">for_get</button>
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <button @click="login">ログイン</button>
+    <button @click="printBoards">掲示板取得</button><br />
+    <!--<img alt="Vue logo" src="../assets/logo.png" />-->
+    <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
+    {{ boards }}
   </div>
 </template>
 
@@ -20,15 +21,17 @@ export default {
   data() {
     return {
       auth: new Auth(),
+      boards: null,
     };
   },
   methods: {
     login() {
       this.auth.login();
     },
-    async printUsers() {
-      const boards = await this.auth.boards();
-      //console.log(boards.category);
+    async printBoards() {
+      this.boards = await this.auth.boards();
+      //this.boards = this.boards[0].data();
+      console.log(await this.auth.boards());
     },
   },
 };
