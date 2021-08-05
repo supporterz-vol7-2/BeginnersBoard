@@ -2,12 +2,15 @@
     <div>
 
         <ul v-for="reply of replys" v-bind:key="reply.name">
-            <div class="box_reply">
-                <p class="name">{{ reply.name }}</p>
-                <p class="content"> {{ reply.content }}</p>
-                <p class="good"> いいね：{{ reply.good }}</p>
-                <p class="space">  a</p>
+            <div class="box_left">
+                <div class="box_reply">
+                    <p class="name">{{ reply.name }}</p>
+                    <p class="content"> {{ reply.content }}</p>
+                    <p class="good"> いいね：{{ reply.good }}</p>
+                    <p class="space">  a</p>
+                </div>
             </div>
+            
             
         </ul>
     </div>
@@ -27,16 +30,14 @@
 
 <style>
 
-.box2{
-margin: 2em auto;
-padding: 1em;
-width: 100%;
-color: #606060;
-border: 2px solid #a3703e;
-background-color: #fff;
-box-shadow: -2px 5px 5px #ceb4a5;
-border-radius: 15px;
+
+.box_left{
+width: 60%;
+height: 60%;
+margin-left:auto;
+
 }
+
 .box_reply{
 margin: 2em auto;
 padding: 1em;
