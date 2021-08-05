@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <p class="board-title">{{ title }}</p>
         <ul v-for="user of users" v-bind:key="user.name">
             <div class="box2">
                 <p class="name">{{ user.name }}</p>
@@ -29,7 +29,8 @@ import Child from './reply.vue';
             ]},
             
             { name: '近所のおばちゃん' ,content :"ギター楽しいね" ,good:9,replys:[]}
-            ]
+            ],
+            title:'ギター'
         }
     },
     components: {
@@ -42,7 +43,12 @@ import Child from './reply.vue';
 </script>
 
 <style>
-
+.board-title{
+    text-align: center;
+    color: black;
+    font-size: 300%;
+    text-decoration: none;
+}
 .box2{
 margin: 2em auto;
 padding: 1em;
