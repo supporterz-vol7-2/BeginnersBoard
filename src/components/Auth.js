@@ -14,7 +14,7 @@ const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     console.log("user", user);
   } else {
-    console.log("no");
+    new Auth().login();
   }
   unsubscribe();
 });
@@ -49,16 +49,10 @@ export default class Auth {
   async boards() {
     return this.db
       .collection("boards")
-      .doc("taO26lKjiFInUMe6M72h")
       .get()
-      .then(function (doc) {
-        if (doc.exists) {
-          console.log(doc.id, doc.data());
-          console.log(doc.data().category.get());
-          return doc.data();
-        } else {
-          return null;
-        }
+      .then(function (query) {
+        //console.log(query, query.docs[0].data());
+        return query.docs;
       });
   }
 }
