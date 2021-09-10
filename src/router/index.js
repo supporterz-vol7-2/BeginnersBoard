@@ -21,7 +21,22 @@ const routes = [
     name: "Create-Post",
     component: () =>
       import(/* webpackChunkName: "Create-Post" */ "../views/Create-Post.vue"),
-  }
+  },
+  {
+    path: "/post",
+    name: "post",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Post.vue"),
+  },
+  {
+    path: "/board",
+    name: "board",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Board.vue"),
+  },
 ];
 
 const router = createRouter({
