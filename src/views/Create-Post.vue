@@ -16,7 +16,7 @@
           <p>タグ2：<input type="text" id="tag2"></p>
           <p>タグ3：<input type="text" id="tag3"></p>
           <p>スレッド名：<textarea v-model="textArea" id="thread" rows=3 cols=30 wrap=soft></textarea></p>
-          <button id="submit" type="submit"  @click="check" formaction="./Post.vue" >作成</button> 
+          <button id="submit" type="submit"  @click="check" formaction="./post" >作成</button> 
           <input type="reset" value="クリア">
       </form>    
     </div>
